@@ -206,6 +206,7 @@ footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:36p
 .delay-4{transition-delay:.4s;}
 
 /* ── RESPONSIVE ── */
+/* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .skills-grid{grid-template-columns:repeat(2,1fr);}
   .projects-grid{grid-template-columns:repeat(2,1fr);}
@@ -215,17 +216,58 @@ footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:36p
   nav.scrolled{padding:12px 24px;}
   .nav-links{display:none;}
   .nav-hamburger{display:flex;}
-  #hero{grid-template-columns:1fr;padding:100px 24px 120px;text-align:center;}
+  
+  /* ── HERO MOBILE ADJUSTMENT ── */
+  #hero{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+    padding: 100px 24px 40px;
+    text-align: center;
+    min-height: auto;
+  }
   .hero-eyebrow{justify-content:center;}
   .hero-desc{margin:0 auto 36px;}
   .hero-btns{justify-content:center;}
-  .hero-right{margin-top:48px;order:1;}
-  .hero-left{order:2;}
-  .photo-frame{width:260px;height:320px;}
-  .hero-stats{left:24px;right:24px;bottom:30px;}
+  
+  /* মোবাইলের জন্য অর্ডারিং পরিবর্তন: আগে টেক্সট (1), তারপর ছবি (2), তারপর কাউন্টার (3) */
+  .hero-left{order:1;}
+  .hero-right{margin-top:20px; order:2;}
+  .photo-frame{
+    width: 280px !important;  /* সাইজ একটু বাড়ানো হলো */
+    height: 350px !important; /* সাইজ একটু বাড়ানো হলো */
+    margin: 0 auto;
+  }
+  .hero-stats{
+    position: relative !important;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    order: 3;
+    margin-top: 36px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
   .stat-num{font-size:1.7rem;}
+  
   section{padding:72px 24px;}
-  .about-grid,.exp-layout,.contact-grid,.skills-header{grid-template-columns:1fr;gap:40px;}
+  
+  /* ── ABOUT MOBILE ADJUSTMENT ── */
+  .about-grid{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+  }
+  .about-img-wrap img {
+    height: 380px !important; /* মোবাইলে আর বেশি বড় দেখাবে না */
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .exp-layout,.contact-grid,.skills-header{grid-template-columns:1fr;gap:40px;}
   .skills-grid{grid-template-columns:1fr 1fr;}
   .projects-grid{grid-template-columns:1fr;}
   .services-grid{grid-template-columns:1fr;}
@@ -233,11 +275,9 @@ footer{background:var(--navy-mid);border-top:1px solid var(--border);padding:36p
   .projects-header{flex-direction:column;align-items:flex-start;gap:16px;}
 }
 @media(max-width:480px){
-  .hero-name{font-size:2.4rem;}
+  .hero-name{font-size:2.2rem !important; line-height: 1.2 !important;} /* ওভারল্যাপ ঠিক করার জন্য */
   .skills-grid{grid-template-columns:1fr;}
   .about-details{grid-template-columns:1fr;}
-  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative;bottom:auto;left:auto;right:auto;margin-top:36px;border-top:1px solid var(--border);padding-top:24px;}
-  #hero{padding-bottom:60px;}
 }
 </style>
 </head>
