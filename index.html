@@ -365,7 +365,7 @@ section { padding:110px 64px; }
 
 .pf {
   position:relative;
-  width:420px; height:530px;
+  width:480px; height:600px;
 }
 .pf-img {
   width:100%; height:100%;
@@ -469,12 +469,13 @@ section { padding:110px 64px; }
 ═══════════════════════════════════ */
 #skills {}
 .skills-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:56px; }
-.skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--c-border); }
+.skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; background:transparent; }
 .sk-card {
-  background:var(--c-bg);
+  background:var(--c-card);
+  border:1px solid var(--c-border);
   padding:32px 28px;
   position:relative; overflow:hidden;
-  transition:background .4s, transform .4s var(--ease);
+  transition:all .4s var(--ease);
   cursor:default;
 }
 .sk-card::before {
@@ -753,7 +754,7 @@ footer {
    RESPONSIVE
 ═══════════════════════════════════ */
 @media(max-width:1100px) {
-  .skills-grid { grid-template-columns:repeat(2,1fr); }
+  .skills-grid { grid-template-columns:repeat(3,1fr); }
   .proj-grid   { grid-template-columns:repeat(2,1fr); }
 }
 
@@ -793,7 +794,7 @@ footer {
   .hero-btns  { justify-content:center; }
 
   /* Hero photo — tablet */
-  .pf          { width:300px; height:380px; }
+  .pf          { width:360px; height:450px; }
   .pf-dots     { display:none; }
   .pf-badge    { bottom:-14px; right:-10px; padding:14px 16px; }
 
@@ -813,7 +814,7 @@ footer {
 
   /* ── SKILLS ── */
   .skills-head { grid-template-columns:1fr; gap:32px; }
-  .skills-grid { grid-template-columns:1fr 1fr; }
+  .skills-grid { grid-template-columns:repeat(2,1fr); }
 
   /* ── EXP ── */
   .exp-grid { grid-template-columns:1fr; gap:48px; }
@@ -843,7 +844,7 @@ footer {
   .hero-name { font-size:2.6rem; }
 
   /* Hero photo — mobile */
-  .pf      { width:260px; height:330px; }
+  .pf      { width:300px; height:380px; }
   .pf-badge { bottom:-12px; right:-8px; padding:12px 14px; }
   .pf-badge strong { font-size:1.3rem; }
 
@@ -867,9 +868,8 @@ footer {
   .about-grid-info { grid-template-columns:1fr; }
   section { padding:60px 20px; }
 }
-  .skills-grid { grid-template-columns:1fr; }
   .about-details { grid-template-columns:1fr; }
-  .pf { width:280px; height:360px; }
+  .pf { width:310px; height:390px; }
   .proj-head { flex-direction:column; align-items:flex-start; }
   .about-img {
     height:360px;
